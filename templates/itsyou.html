@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="shortcut icon" href="/static/icon.png">
+    <title>its you</title>
+  </head>
+  <body>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">This is "you" on internet</h1>
+    <p class="lead">You may be asking yourself, wtf is this creepy website? It's really not intended to be creepy. But rather, the goal is to demonstrate to you, the Internet user, just how much the websites you visit know about you. Explore and enjoy!</p>
+  </div>
+</div>
+<div class="container-fluid">
+      	<div class="card text-white bg-primary mb-3 mx-auto w-80 shadow-lg" >
+  <div class="card-header">IP</div>
+  <div class="card-body">
+    <h5 class="card-title">{{data.ip}}</h5>
+    <p class="card-text">This is the address you connected from. It should be your proxy server's address if you're using one, otherwise just your good ol' public-facing IP. </p>
+  </div>
+</div>
+
+
+<div class="card text-white bg-success mb-3 mx-auto w-80 shadow-lg" >
+  <div class="card-header">Region</div>
+  <div class="card-body">
+    <h5 class="card-title">You are from {{data.region}}</h5>
+    <p class="card-text">Based on your IP, it is possible to get your location upto a certain level. </p>
+  </div>
+</div>
+<div class="card text-white bg-secondary mb-3 mx-auto w-80 shadow-lg" >
+  <div class="card-header">Browser</div>
+  <div class="card-body">
+    <h5 class="card-title">You are browsing from {{data.browser}} v.{{data.version}}</h5>
+    <p class="card-text"> This tells me a bit about how you're connecting, just so I know how to set things up for you.</p>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3 mx-auto w-80 shadow-lg" >
+  <div class="card-header">Platform</div>
+  <div class="card-body">
+    <h5 class="card-title">You are a {{data.platform}} user</h5>
+    <p class="card-text">Ah! your platform..PC or a mac or a mobile device! I could go deeper even into your architecture..but no.</p>
+  </div>
+</div>
+     <div class="card text-white bg-dark mb-3 mx-auto w-80 shadow-lg">
+  <div class="card-header">Visits</div>
+  <div class="card-body">
+    <h5 class="card-title">{{data.visits}}</h5>
+    <p class="card-text">How many times you have visited this website? But why would you.</p>
+  </div>
+</div>
+
+</div>
+
+ <footer class="footer">
+      <div class="container">
+        <span class="text-muted ">Made with 💖 (not really)</span>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
