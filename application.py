@@ -11,6 +11,7 @@ app.permanent_session_lifetime = datetime.timedelta(days=365)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
+api_key=os.getenv('IPSTACK_API')
 
 db = SQLAlchemy(app)
 
@@ -35,8 +36,8 @@ def index():
     version = request.user_agent.version
     platform = request.user_agent.platform
 
-    url = 'http://api.ipstack.com/{}?access_key=01a41e65470ed1468e952ed82414e025&format=1'
-    api_data = requests.get(url.format(ip)).json()
+    url = f'http://api.ipstack.com/{ip}?access_key={api_key}&format=1'
+    api_data = requests.get(url).json()
     
     if 'visits' in session:
         session['visits'] = session.get('visits') + 1
