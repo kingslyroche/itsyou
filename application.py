@@ -2,14 +2,14 @@ from flask import Flask , request , render_template,session
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import datetime
+import os
 
 
-
-application=app = Flask(__name__)
-app.secret_key = 'cC1YCIWOj9GgWspgNEo2' 
+app = Flask(__name__)
+app.secret_key = os.getenv('SECRET_KEY') 
 app.permanent_session_lifetime = datetime.timedelta(days=365)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@db_url:3306/db_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 
 db = SQLAlchemy(app)
@@ -34,12 +34,7 @@ def index():
     browser = request.user_agent.browser
     version = request.user_agent.version
     platform = request.user_agent.platform
-    
-  
-    
-    
-    
-    
+
     url = 'http://api.ipstack.com/{}?access_key=01a41e65470ed1468e952ed82414e025&format=1'
     api_data = requests.get(url.format(ip)).json()
     
@@ -67,10 +62,6 @@ def index():
 
     return render_template("itsyou.html" , data = x)	
 
-
-
-if __name__ == "__main__":
-    app.run()
 
 
 
