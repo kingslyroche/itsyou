@@ -5,22 +5,22 @@ This is how the internet identifies you.
 
 the website shows the basic info received by the website when you visit one.
 
-also has a backend DB in AWS RDS to store each visits.
+also has a backend postgres Db hosted in heroku to store each visits.
 
-Uses ipstack api to get geo location of the IPs.
+Uses ipstack free api to get geo location of the IPs.
 
-deployed in AWS ELASTIC BEANSTALK.
+deployed in Heroku.
 
-url:  http://itsyou.ap-south-1.elasticbeanstalk.com/
+url:  http://itsyou.herokuapp.com/
 
 
 flask,python.
 
 ------------------------------------------------------------------------------------------------
 
-#things to be added
+#TODO
 
 1.previous visits
 2.data analysis
-
+3.get rid of sessions
 
