@@ -31,7 +31,10 @@ class itsyou(db.Model):
 def index():
     session.permanent = True
     
-    ip = request.remote_addr
+    if not request.headers.getlist("X-Forwarded-For"):
+        ip = request.remote_addr
+    else:
+        ip = request.headers.getlist("X-Forwarded-For")[0]
     browser = request.user_agent.browser
     version = request.user_agent.version
     platform = request.user_agent.platform
